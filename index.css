@@ -1,0 +1,73 @@
+* {   /*el selector * selecciona todo el contenido del HTML*/
+    font-family: 'Fraunces', serif;
+    color: #fff;
+}
+
+body{
+    margin: 0;
+    background-color: #224870;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /*alinee el contenido respecto al total de la vista*/
+}
+
+.calculadora{
+    display: grid; /*es lo que permite que sea una grilla*/
+    grid-template-columns: repeat(4, 75px); /* una vez que se formen 4 columnas se siguen repitiendo hacia abajo y tendran un tamano de 75 px*/
+    grid-template-rows: 160px repeat(5, 75px); /*160px sera el alto total del display y las filas que se repitan de a 5 con un tamano de 75px*/
+    background-color: #00916e;
+    padding: 15px;/*para que los botones no queden pegados a los bordes*/
+    border-radius: 32px;
+    box-shadow: 15px 10px 0px 5px #00000033; /*el primer valor lo mueve en el eje x y el segundo en el eje Y, que tal gruesa, que tan grande es la sombra y el color (completamente negro pero con 33 de opacidad)*/
+}
+
+button{
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 32px;
+    font-size: 1.5em;
+    border: none;
+    background-color: #00916e;
+    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00FFC11F; /*colocamos sombra a lado y lado de los botones para que no se pierda en la calculadora. La , los separa*/
+}
+
+button:active{
+    background-color: #006f54; 
+}
+
+button:focus{
+    outline: none;
+}
+
+.display{
+    grid-column: 1 / -1;
+    padding: 16px;
+    display: flex;
+    margin: 10px 10px 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #363636;
+    border-radius: 32px;
+    text-align: right;
+    justify-content: space-between; /*para que los valores previous y actual tenga espacio entre ellos*/
+    word-break:  break-all; /*por si el valor es muy grande y debemos irnos a dos lineas*/
+    box-shadow: 0px 0px 0px 10px #00000033;
+}
+
+.col-2{
+    grid-column: span 2;
+}
+
+.valor-actual{
+    font-size: 1.5em;
+}
+
+.valor-anterior{
+    font-size: 2em;
+}
+
